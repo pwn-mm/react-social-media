@@ -96,7 +96,7 @@ export const userSavedPinsQuery = (userId) => {
 };
 
 export const searchQuery = (searchTerm) => {
-  const query = `*[_type == 'pin' && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*']{
+  const query = `*[_type == 'pin' && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*'] | order(_createdAt desc) {
     image {
       asset -> {
         url
@@ -121,7 +121,7 @@ export const searchQuery = (searchTerm) => {
   return query;
 };
 
-export const feedQuery = `*[_type == 'pin'] | order(_createAt desc)  {
+export const feedQuery = `*[_type == 'pin'] | order(_createdAt desc)  {
   image {
     asset -> {
       url
@@ -182,7 +182,7 @@ export const pinDetailQuery = (pinId) => {
 };
 
 export const pinDetailMorePinQuery = (pin) => {
-  const query = `*[_type == "pin" && category == '${pin.category}' && _id != '${pin._id}' ]{
+  const query = `*[_type == "pin" && category == '${pin.category}' && _id != '${pin._id}' ] | order(_createdAt desc){
     image{
       asset->{
         url

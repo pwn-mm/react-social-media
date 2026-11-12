@@ -69,7 +69,7 @@ const PinDetail = ({ user }) => {
   return (
     <>
       <div
-        className="flex flex-col m-auto bg-white xl-flex-row"
+        className="flex flex-col m-auto bg-white xl:flex-row"
         style={{ maxWidth: "1500px", borderRadius: "2rem" }}
       >
         <div className="flex items-center justify-center flex-initial md:items-start">
@@ -96,7 +96,7 @@ const PinDetail = ({ user }) => {
             </a>
           </div>
           <div>
-            <h1 className="mt-3 text-4xl font-bold break-words">
+            <h1 className="mt-3 text-2xl font-bold break-words">
               {pinDetail.title}
             </h1>
             <p className="mt-3"> {pinDetail.about} </p>
@@ -114,9 +114,13 @@ const PinDetail = ({ user }) => {
               {pinDetail.postedBy?.userName}
             </p>
           </Link>
-          <h2 className="mt-5 text-2xl">Comments</h2>
+
+          <h2 className="mt-5 text-2xl font-bold">Comments</h2>
           <div className="overflow-y-auto max-h-370">
             {/* Definitely make sure to use '?' */}
+            {!pinDetail?.comments?.length && (
+              <p className="mt-5 text-gray-500">No comments yet</p>
+            )}
             {pinDetail?.comments?.map((comment, i) => (
               <div
                 className="flex items-center gap-2 mt-5 bg-white rounded-lg"

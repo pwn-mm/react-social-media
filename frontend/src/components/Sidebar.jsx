@@ -3,7 +3,6 @@ import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
 
 import logo from "../assets/logo.png";
-　
 import { categories } from "../utils/data";
 
 const isNotActiveStyle =
@@ -40,7 +39,7 @@ const Sidebar = ({ user, closeToggle }) => {
           <h3 className="px-5 mt-2 text-base 2xl:text-xl">
             Discover Categories
           </h3>
-          {categories.slice(0, categories.length - 1).map((category) => (
+          {categories.map((category) => (
             <NavLink
               to={`/category/${category.name}`}
               className={({ isActive }) =>
@@ -54,7 +53,7 @@ const Sidebar = ({ user, closeToggle }) => {
                 alt="category-img"
                 className="w-8 h-8 rounded-full shadow-sm"
               />
-              {category.label} 
+              {category.label}
               {/* Use label instead of name for display */}
             </NavLink>
           ))}

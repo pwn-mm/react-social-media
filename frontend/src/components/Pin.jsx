@@ -20,7 +20,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   // console.log(save);
 
   const alreadySaved = !!save?.filter(
-    (item) => item?.postedBy?._id === user?.googleId
+    (item) => item?.postedBy?._id === user?.googleId,
   )?.length;
 
   /**
@@ -34,13 +34,13 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
       // update the document in sanity db
       client
         .patch(id)
-        .setIfMissing({ save: [] }) 
+        .setIfMissing({ save: [] })
         .insert("after", "save[-1]", [
           {
             _key: uuidv4(),
             userId: user?.googleId,
             postedBy: {
-              _type: postedBy,
+              _type: "postedBy",
               _ref: user?.googleId,
             },
           },
