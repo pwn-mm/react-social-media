@@ -194,7 +194,7 @@ const CreatePin = ({ user }) => {
                     value={category.name}
                     className="text-base text-black capitalize bg-white border-0 outline-none"
                   >
-                    {category.name}
+                    {category.label}
                   </option>
                 ))}
               </select>

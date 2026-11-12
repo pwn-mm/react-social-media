@@ -11,10 +11,8 @@ import {
 import { client } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
-import { FcGoogle } from "react-icons/fc";
+import bannerImg from "../assets/banner.JPG";
 
-const randomImage =
-  "https://source.unsplash.com/1600x900/?nature,photography,technology";
 
 const activeBtnStyles =
   "bg-red-500 mt-3 text-white font-bold p-2 rounded-full w-20 outline-none";
@@ -69,7 +67,7 @@ const UserProfile = () => {
         <div className="relative flex flex-col mb-7">
           <div className="flex flex-col items-center justify-center">
             <img
-              src={randomImage}
+              src={bannerImg}
               className="object-cover w-full shadow-lg h-370 xl:h-510"
               alt="banner-pic"
             />

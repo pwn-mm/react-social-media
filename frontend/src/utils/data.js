@@ -1,65 +1,41 @@
 // fetch sanity data from here
 
 export const categories = [
-  // {
-  //   name: "cars",
-  //   image:
-  //     "https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg",
-  // },
   {
-    name: "k-pop",
+    name: 'Movie',
+    label: '映画',
     image:
-      "https://i.pinimg.com/originals/18/78/a1/1878a17feefe6487dcaf46a3e05d8ac2.jpg",
+      'https://i.pinimg.com/750x/cf/c8/99/cfc899bbb210026bcb64c32ce80dd9ac.jpg',
   },
   {
-    name: "tv-series",
+    name: 'Food',
+    label: '食べ物',
     image:
-      "https://i.pinimg.com/750x/24/f2/dd/24f2ddf8f9f5da59649c0123677e367d.jpg",
+      'https://i.pinimg.com/236x/7d/ef/15/7def15ac734837346dac01fad598fc87.jpg',
   },
   {
-    name: "movies",
+    name: 'Nature',
+    label: '自然',
     image:
-      "https://i.pinimg.com/750x/cf/c8/99/cfc899bbb210026bcb64c32ce80dd9ac.jpg",
+      'https://i.pinimg.com/236x/b9/82/d4/b982d49a1edd984c4faef745fd1f8479.jpg',
   },
   {
-    name: "food",
+    name: 'Travel',
+    label: '旅行',
     image:
-      "https://i.pinimg.com/236x/7d/ef/15/7def15ac734837346dac01fad598fc87.jpg",
+      'https://i.pinimg.com/236x/fa/95/98/fa95986f2c408098531ca7cc78aee3a4.jpg',
   },
   {
-    name: "nature",
+    name: 'Pets',
+    label: 'ペット',
     image:
-      "https://i.pinimg.com/236x/b9/82/d4/b982d49a1edd984c4faef745fd1f8479.jpg",
+      'https://i.pinimg.com/236x/6c/3c/52/6c3c529e8dadc7cffc4fddedd4caabe1.jpg',
   },
   {
-    name: "art",
+    name: 'Coding',
+    label: 'コーディング',
     image:
-      "https://i.pinimg.com/736x/f4/e5/ba/f4e5ba22311039662dd253be33bf5f0e.jpg",
-  },
-  {
-    name: "travel",
-    image:
-      "https://i.pinimg.com/236x/fa/95/98/fa95986f2c408098531ca7cc78aee3a4.jpg",
-  },
-  {
-    name: "cats",
-    image:
-      "https://i.pinimg.com/236x/6c/3c/52/6c3c529e8dadc7cffc4fddedd4caabe1.jpg",
-  },
-  {
-    name: "dogs",
-    image:
-      "https://i.pinimg.com/236x/1b/c8/30/1bc83077e363db1a394bf6a64b071e9f.jpg",
-  },
-  {
-    name: "coding",
-    image:
-      "https://i.pinimg.com/236x/67/18/6d/67186d954b4ec79411cf02ab5851957d.jpg",
-  },
-  {
-    name: "other",
-    image:
-      "https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg",
+      'https://i.pinimg.com/236x/67/18/6d/67186d954b4ec79411cf02ab5851957d.jpg',
   },
 ];
 

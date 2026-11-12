@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { RiHomeFill } from "react-icons/ri";
-import { IoIosArrowForward } from "react-icons/io";
 
 import logo from "../assets/logo.png";
-
+　
 import { categories } from "../utils/data";
 
 const isNotActiveStyle =
@@ -55,7 +54,8 @@ const Sidebar = ({ user, closeToggle }) => {
                 alt="category-img"
                 className="w-8 h-8 rounded-full shadow-sm"
               />
-              {category.name}
+              {category.label} 
+              {/* Use label instead of name for display */}
             </NavLink>
           ))}
         </div>
