@@ -102,7 +102,7 @@ const PinDetail = ({ user }) => {
             <p className="mt-3"> {pinDetail.about} </p>
           </div>
           <Link
-            to={`user-profile/${pinDetail.postedBy?._id}`}
+            to={`/user-profile/${pinDetail.postedBy?._id}`}
             className="flex items-center gap-2 mt-5 bg-white rounded-lg"
           >
             <img
@@ -141,7 +141,7 @@ const PinDetail = ({ user }) => {
           {/* create comment section */}
           <div className="flex flex-wrap gap-3 mt-6">
             {user && (
-              <Link to={`user-profile/${user._id}`}>
+              <Link to={`/user-profile/${user._id}`}>
                 <img
                   className="w-10 h-10 rounded-full cursor-pointer"
                   src={user.image}
