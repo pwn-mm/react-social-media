@@ -140,13 +140,15 @@ const PinDetail = ({ user }) => {
           </div>
           {/* create comment section */}
           <div className="flex flex-wrap gap-3 mt-6">
-            <Link to={`user-profile/${pinDetail.postedBy?._id}`}>
-              <img
-                className="w-10 h-10 rounded-full cursor-pointer"
-                src={pinDetail.postedBy?.image}
-                alt="user-profile"
-              />
-            </Link>
+            {user && (
+              <Link to={`user-profile/${user._id}`}>
+                <img
+                  className="w-10 h-10 rounded-full cursor-pointer"
+                  src={user.image}
+                  alt="user-profile"
+                />
+              </Link>
+            )}
             <input
               className="flex-1 p-2 border-2 border-gray-100 outline-none rounded-2xl focus:border-gray-300"
               type="text"
