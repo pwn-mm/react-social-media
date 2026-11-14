@@ -34,10 +34,10 @@ const Sidebar = ({ user, closeToggle }) => {
             }
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill /> Home
+            <RiHomeFill /> ホーム
           </NavLink>
-          <h3 className="px-5 mt-2 text-base 2xl:text-xl">
-            Discover Categories
+          <h3 className="px-5 mt-2 text-base font-bold 2xl:text-xl">
+            カテゴリー
           </h3>
           {categories.map((category) => (
             <NavLink

@@ -12,7 +12,7 @@ import { client } from "../client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 import bannerImg from "../assets/banner.JPG";
-
+import { fetchUser } from "../utils/fetchUser";
 
 const activeBtnStyles =
   "bg-red-500 mt-3 text-white font-bold p-2 rounded-full w-20 outline-none";
@@ -26,6 +26,7 @@ const UserProfile = () => {
   const [activeBtn, setActiveBtn] = useState("created");
   const navigate = useNavigate();
   const { userId } = useParams();
+  const loggedUser = fetchUser();
 
   useEffect(() => {
     const query = userQuery(userId);
@@ -80,7 +81,7 @@ const UserProfile = () => {
               {user.userName}
             </h1>
             <div className="absolute top-0 right-0 z-10 p-2">
-              {userId === user._id && (
+              {userId === loggedUser?.googleId && (
                 <GoogleLogout
                   clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
                   render={(renderProps) => (
