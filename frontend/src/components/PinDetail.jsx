@@ -167,15 +167,16 @@ const PinDetail = ({ user }) => {
         </div>
       </div>
       {/* for related posts */}
-      {pins?.length > 0 ? (
+      {/* case 1: still loading */}
+      {pins === null && <Spinner message="Loading more pins..." />}
+
+      {pins?.length > 0 && (
         <>
           <h2 className="mt-8 mb-4 text-2xl font-bold text-center">
             More like this
           </h2>
           <MasonryLayout pins={pins} />
         </>
-      ) : (
-        <Spinner message="Loading more pins..." />
       )}
     </>
   );
