@@ -11,7 +11,10 @@ const Login = () => {
   const navigate = useNavigate();
 
   const responseGoogle = (response) => {
-    console.log(response);
+    if (!response?.profileObj === undefined) {
+      console.error("Google login failed: profileObj is undefined");
+      return;
+    }
     localStorage.setItem("user", JSON.stringify(response.profileObj));
 
     const { name, googleId, imageUrl } = response.profileObj; // create new sanity doc for user and save these
@@ -55,11 +58,11 @@ const Login = () => {
                   disabled={renderProps.disabled}
                 >
                   <FcGoogle className="mr-4" />
-                  Sign in with Google.
+                  Googleでログイン
                 </button>
               )}
               onSuccess={responseGoogle}
-              onFailure={responseGoogle}
+              onFailure={(error) => console.error("Google login error:", error)}
               cookiePolicy="single_host_origin"
             />
           </div>
