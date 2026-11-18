@@ -37,15 +37,11 @@ const UserProfile = () => {
   // To fetch saved posts and created posts
   useEffect(() => {
     if (text === "Created") {
-      const createdPinsQuery = userCreatedPinsQuery(userId);
-
-      client.fetch(createdPinsQuery).then((data) => {
+      client.fetch(userCreatedPinsQuery, { userId }).then((data) => {
         setPins(data);
       });
     } else {
-      const savedPinsQuery = userSavedPinsQuery(userId);
-
-      client.fetch(savedPinsQuery).then((data) => {
+      client.fetch(userSavedPinsQuery, { userId }).then((data) => {
         setPins(data);
       });
     }

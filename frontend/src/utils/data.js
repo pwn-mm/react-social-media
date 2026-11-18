@@ -41,8 +41,7 @@ export const categories = [
 
 export const userQuery = `*[_type == 'user' && _id == $userId]`; // sanity query
 
-export const userCreatedPinsQuery = (userId) => {
-  const query = `*[ _type == 'pin' && userId == '${userId}'] | order(_createdAt desc){
+export const userCreatedPinsQuery = `*[ _type == 'pin' && userId == $userId] | order(_createdAt desc){
     image{
       asset->{
         url
@@ -63,11 +62,8 @@ export const userCreatedPinsQuery = (userId) => {
       },
     },
   }`;
-  return query;
-};
 
-export const userSavedPinsQuery = (userId) => {
-  const query = `*[_type == 'pin' && '${userId}' in save[].userId ] | order(_createdAt desc) {
+export const userSavedPinsQuery = `*[_type == 'pin' && $userId in save[].userId ] | order(_createdAt desc) {
     image{
       asset->{
         url
@@ -88,8 +84,6 @@ export const userSavedPinsQuery = (userId) => {
       },
     },
   }`;
-  return query;
-};
 
 export const searchQuery = (searchTerm) => {
   const query = `*[_type == 'pin' && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*'] | order(_createdAt desc) {
