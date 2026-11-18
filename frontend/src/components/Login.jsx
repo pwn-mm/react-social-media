@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const responseGoogle = (response) => {
-    if (!response?.profileObj === undefined) {
+    if (response?.profileObj === undefined) {
       console.error("Google login failed: profileObj is undefined");
       return;
     }
