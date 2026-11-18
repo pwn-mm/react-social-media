@@ -20,8 +20,7 @@ const Home = () => {
 
   // get user from sanity rather than relying on local storage
   useEffect(() => {
-    const query = userQuery(userInfo?.googleId);
-    client.fetch(query).then((data) => {
+    client.fetch(userQuery, { userId: userInfo?.googleId }).then((data) => {
       setUser(data[0]); // googleId: "111111111111111 "
     });
   }, []);

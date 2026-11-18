@@ -29,9 +29,7 @@ const UserProfile = () => {
   const loggedUser = fetchUser();
 
   useEffect(() => {
-    const query = userQuery(userId);
-
-    client.fetch(query).then((data) => {
+    client.fetch(userQuery, { userId }).then((data) => {
       setUser(data[0]);
     });
   }, [userId]);
