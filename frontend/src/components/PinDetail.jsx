@@ -44,19 +44,19 @@ const PinDetail = ({ user }) => {
   };
 
   const fetchPinDetails = () => {
-    let query = pinDetailQuery(pinId);
-    if (query) {
-      client.fetch(query).then((data) => {
-        setPinDetail(data[0]);
+    client.fetch(pinDetailQuery, { pinId }).then((data) => {
+      setPinDetail(data[0]);
 
-        // get individual pin
-        if (data[0]) {
-          query = pinDetailMorePinQuery(data[0]);
-
-          client.fetch(query).then((res) => setPins(res));
-        }
-      });
-    }
+      // get individual pin
+      if (data[0]) {
+        client
+          .fetch(pinDetailMorePinQuery, {
+            pinId: data[0]._id,
+            category: data[0].category,
+          })
+          .then((res) => setPins(res));
+      }
+    });
   };
 
   // only when pin id changes
