@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"; // for param
 
 import { client } from "../client";
-import { feedQuery, searchQuery } from "../utils/data";
+import { feedQuery, categoryQuery } from "../utils/data";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
@@ -18,8 +18,7 @@ const Feed = () => {
   useEffect(() => {
     setLoading(true);
     if (categoryId) {
-      const query = searchQuery(categoryId);
-      client.fetch(query).then((data) => {
+      client.fetch(categoryQuery, { category: categoryId }).then((data) => {
         setPins(data);
         setLoading(false);
       });
